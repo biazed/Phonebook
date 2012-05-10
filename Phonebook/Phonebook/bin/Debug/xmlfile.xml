@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<people>
+  <person id="1">
+    <name>John Mason</name>
+    <number>0700123123</number>
+  </person>
+
+  <person id="2">
+    <name>John Kane</name>
+    <number>020202</number>
+  </person>
+
+
+</people>

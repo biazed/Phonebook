@@ -1,0 +1,9 @@
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\bin\Debug\Phonebook.exe
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\bin\Debug\Phonebook.pdb
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\Phonebook.phonebook.resources
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\Phonebook.Properties.Resources.resources
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\Phonebook.exe
+C:\Users\Biazed\documents\visual studio 2010\Projects\Phonebook\Phonebook\obj\x86\Debug\Phonebook.pdb
