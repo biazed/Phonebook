@@ -47,58 +47,14 @@ namespace Phonebook
         XmlDocument doc = new XmlDocument();
         doc.Load("xmlfile.xml");
 
-        XmlNodeList nodes = doc.SelectNodes("/persons/person/name");
-            
+        XmlNodeList nodes = doc.SelectNodes("//persons");
+        MessageBox.Show("" + nodes[0]);
             foreach (XmlNode node in nodes) 
             {
                 MessageBox.Show(node.InnerText);
             }
         
-            /*
-
-
-             xmlattrc = xmlnode[i].Attributes;
-            if (int.Parse(xmlattrc[0].Value) == empid)
-            {
-                
-
-                
-
-                xmlnode[i].ChildNodes[0].InnerText = fname;//ChildNodes[0] is First Name
-                xmlnode[i].ChildNodes[1].InnerText = lname;
-                xmlnode[i].ChildNodes[2].InnerText = age;
-                doc.Save(xmlFile);// The New Data is Saved in the XML file by replacing old data for that particular employee.
-            }
-        }
-            */
-
-            /*
-            //XmlTextReader reader = new XmlTextReader("xmlfile.xml");
-            XmlDocument document = new XmlDocument();
-            document.Load("xmlfile.");
-            document.
-                */
-            /*
-            while (reader.Read())
-            {
-                switch (reader.NodeType)
-                {
-                    case XmlNodeType.Element: // The node is an element.
-                        if(reader.Name == inName[0] + " " + inName[1] || reader.Name == inName[1] + " " + inName[0])
-                           
-                        break;
-                    case XmlNodeType.Text: //Display the text in each element.
-                        Console.WriteLine(reader.Value);
-                        break;
-                    case XmlNodeType.EndElement: //Display the end of the element.
-                        Console.Write("</" + reader.Name);
-                        Console.WriteLine(">");
-                        break;
-                }
-            }*/
-	        
-            //output[1] = " ";
-            //MessageBox.Show(output[1]);
+            
             return output;
          
         }
