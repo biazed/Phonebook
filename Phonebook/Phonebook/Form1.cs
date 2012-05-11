@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Xml;
+using System.Xml.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,37 +41,33 @@ namespace Phonebook
         {
             string[] output = new string[2];
             output[0] = null;
-                XmlTextReader reader = new XmlTextReader("./xmlfile.xml");
-                reader.Read();
+            XDocument reader = XDocument.Load("xmlfile.xml");
 
-                while (reader.Read())
+            string name = reader.Element("name").Value;
+            MessageBox.Show(name);
+            //reader.Descendants("persons");
+                
+            /*
+             public class Tutorial
                 {
-                    switch (reader.NodeType)
-                    {
-                        case XmlNodeType.Text: //Display the text in each element.
-                            if (reader.Value == inName[0] + " " + inName[1] || reader.Value == inName[1] + " " + inName[0])
-                            {
-                                output[0] = reader.Value;
-                                output[1] = reader.Value;
-                                //MessageBox.Show(output[0]+ " " +output[1] + " " +reader.Value);
-                                MessageBox.Show(reader.NodeType.ToString());
-                                MessageBox.Show(reader.Value);
-                            }
-                            break;
-                            reader.Read();
-                            MessageBox.Show(reader.Value);
-                            /*
-                        case XmlNodeType.Element:
-                            if (reader.Name == "number")
-                            {
-                                MessageBox.Show();
-                            }
-                            break;*/
-                            //return output;
-                            
-                    }  // ~ Switch ENDS
-                }  // ~ While ENDS
-                return output;
+                  public string Author { get; set; }
+                  public string Title { get; set; }
+                  public DateTime Date { get; set; }
+                }
+            
+             * .......
+             
+                   List<Person> persons =
+                  (from tutorial in xmlDoc.Descendants("persons")
+                   where tutorial.Element("name").Value == inName;
+                   select new person
+                   {
+                     Name = tutorial.Element("name").Value,
+                     Number = tutorial.Element("number").Value,
+                   }).ToList<Person>();
+            
+            */
+            return output;
          
         }
     }
