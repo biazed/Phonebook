@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,43 +42,65 @@ namespace Phonebook
         {
             string[] output = new string[2];
             output[0] = null;
-            XDocument reader = XDocument.Load("xmlfile.xml");
+            
+                 // Load the document.
+        XmlDocument doc = new XmlDocument();
+        doc.Load("xmlfile.xml");
 
-            string name = reader.Element("name").Value;
-            MessageBox.Show(name);
-            //reader.Descendants("persons");
-                
+        XmlNodeList nodes = doc.SelectNodes("/persons/person/name");
+            
+            foreach (XmlNode node in nodes) 
+            {
+                MessageBox.Show(node.InnerText);
+            }
+        
             /*
-             public class Tutorial
-                {
-                  public string Author { get; set; }
-                  public string Title { get; set; }
-                  public DateTime Date { get; set; }
-                }
-            
-             * .......
-             
-                   List<Person> persons =
-                  (from tutorial in xmlDoc.Descendants("persons")
-                   where tutorial.Element("name").Value == inName;
-                   select new person
-                   {
-                     Name = tutorial.Element("name").Value,
-                     Number = tutorial.Element("number").Value,
-                   }).ToList<Person>();
-            
+
+
+             xmlattrc = xmlnode[i].Attributes;
+            if (int.Parse(xmlattrc[0].Value) == empid)
+            {
+                
+
+                
+
+                xmlnode[i].ChildNodes[0].InnerText = fname;//ChildNodes[0] is First Name
+                xmlnode[i].ChildNodes[1].InnerText = lname;
+                xmlnode[i].ChildNodes[2].InnerText = age;
+                doc.Save(xmlFile);// The New Data is Saved in the XML file by replacing old data for that particular employee.
+            }
+        }
             */
+
+            /*
+            //XmlTextReader reader = new XmlTextReader("xmlfile.xml");
+            XmlDocument document = new XmlDocument();
+            document.Load("xmlfile.");
+            document.
+                */
+            /*
+            while (reader.Read())
+            {
+                switch (reader.NodeType)
+                {
+                    case XmlNodeType.Element: // The node is an element.
+                        if(reader.Name == inName[0] + " " + inName[1] || reader.Name == inName[1] + " " + inName[0])
+                           
+                        break;
+                    case XmlNodeType.Text: //Display the text in each element.
+                        Console.WriteLine(reader.Value);
+                        break;
+                    case XmlNodeType.EndElement: //Display the end of the element.
+                        Console.Write("</" + reader.Name);
+                        Console.WriteLine(">");
+                        break;
+                }
+            }*/
+	        
+            //output[1] = " ";
+            //MessageBox.Show(output[1]);
             return output;
          
         }
     }
 }
-
-/*
-case XmlNodeType.Element: // The node is an element.
-if (reader.Name == "name")
-    Console.Write("Name: ");
-if (reader.Name == "number")
-    Console.Write("Number: ");
-break;
- */
